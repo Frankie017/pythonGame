@@ -89,6 +89,7 @@ difficulty = 10
 # Ask the player to choose the speed when the program launches
 show_speed_menu()
 
+# initialisiert die Position der Schlange
 snake_pos = [100, 50]
 snake_body = [[100, 50], [100-10, 50], [100-(2*10), 50]]
 
@@ -131,6 +132,7 @@ while True:
         direction = 'RIGHT'
 
     # /////////////////////////////////////////////////////// Kollision von Bildschirm //////////////////////////////
+    # Dieser Abschnitt des Codes ist für die Bewegung der Schlange verantwortlich, Position aktualisierung, Rand des Spielfelds ueberpruefen, sicherstellen, dass die Schlange auf gegenueberstehende Seite erscheint 
     if direction == 'UP':
         snake_pos[1] -= 10
         if snake_pos[1] < 0:
