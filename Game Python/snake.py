@@ -39,6 +39,7 @@ def game_over():
     time.sleep(3)
     show_speed_menu()
 
+////// Moeglichkeit die Geschwindigket auszuwaehlen //////////////////////////////////////////////////////////
 def show_speed_menu():
     global difficulty
     game_window.fill(black)
@@ -94,6 +95,8 @@ snake_body = [[100, 50], [100-10, 50], [100-(2*10), 50]]
 food_pos = [random.randrange(1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10]
 food_spawn = True
 
+
+# ///////////// Hindernisse, dass die Schlange vermeiden soll ////////////////////////////////////////////////////////////////////////////////////////////
 obstacle_pos = [(random.randrange(1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10) for _ in range(10)]
 
 direction = 'RIGHT'
@@ -127,6 +130,7 @@ while True:
     if change_to == 'RIGHT' and direction != 'LEFT':
         direction = 'RIGHT'
 
+    # /////////////////////////////////////////////////////// Kollision von Bildschirm //////////////////////////////
     if direction == 'UP':
         snake_pos[1] -= 10
         if snake_pos[1] < 0:
@@ -153,6 +157,7 @@ while True:
 
     if not food_spawn:
         food_pos = [random.randrange(1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10]
+        # ///////////////////////////////////////////// Frucht muss nicht da erscheinen, wo bereits Hindernisse sind, es muss verhindert werden ///////////////////////////////////////
         while food_pos in obstacle_pos:
             food_pos = [random.randrange(1, (frame_size_x//10)) * 10, random.randrange(1, (frame_size_y//10)) * 10]
         food_spawn = True
@@ -171,6 +176,7 @@ while True:
     for block in snake_body[1:]:
         if snake_pos[0] == block[0] and snake_pos[1] == block[1]:
             game_over()
+        # //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     if tuple(snake_pos) in obstacle_pos:
         game_over()
 
