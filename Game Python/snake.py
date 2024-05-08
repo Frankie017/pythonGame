@@ -39,7 +39,7 @@ def game_over():
     time.sleep(3)
     show_speed_menu()
 
-////// Moeglichkeit die Geschwindigket auszuwaehlen //////////////////////////////////////////////////////////
+# ////// Moeglichkeit die Geschwindigket auszuwaehlen //////////////////////////////////////////////////////////
 def show_speed_menu():
     global difficulty
     game_window.fill(black)
