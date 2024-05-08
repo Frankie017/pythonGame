@@ -86,7 +86,7 @@ def show_score(choice, color, font, size):
 # Set the default difficulty before asking the player to choose
 difficulty = 10
 
-# Ask the player to choose the speed when the program launches
+# Level ask
 show_speed_menu()
 
 # initialisiert die Position der Schlange
